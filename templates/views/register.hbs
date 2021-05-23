@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Evidence kontaktů</title>
+</head>
+
+<body>
+    {{>header}}
+
+    <form action="/users" method="POST">
+        <input type="name" placeholder="name" name="name">  
+        <input type="email" placeholder="email" name="email">  
+        <input type="password" placeholder="heslo" name="password">
+        <input type="age" placeholder="age" name="age">
+
+        <input type="submit" value="Odeslat">
+    </form>    
+    
+    <p>{{message}}</p>
+
+    {{>footer}}
+    
+</body>
+
+</html>

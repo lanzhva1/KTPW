@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Evidence kontaktů</title>
+</head>
+
+<body>
+    {{>header}}
+
+    <!--  Profile of user -->
+    
+
+     {{#with user}}
+        <p>Jméno uživatele: {{name}}</p>
+        <p>Email: {{email}}</p>
+        <p>Age: {{age}}</p>
+    {{/with}}
+
+    <button>Ukaž úlohy</button>
+    
+    {{>footer}}
+    
+</body>
+
+</html>

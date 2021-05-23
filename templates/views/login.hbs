@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Evidence kontaktů</title>
+</head>
+
+<body>
+    {{>header}}
+
+    {{!-- tu část s action jsem našel na netu --}}
+    <form action="/users/login" method="POST">
+        <input type="email" placeholder="email" name="email">  
+        <input type="password" placeholder="heslo" name="password">
+
+        <input type="submit" value="Odeslat">       
+    </form>   
+   
+    <p>{{message}}</p>
+
+    <a href="/register">Registrace</a>
+
+    {{>footer}}
+    
+</body>
+
+</html>
