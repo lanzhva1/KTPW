@@ -4,6 +4,7 @@ const hbs = require('hbs')
 require('./db/mongoose')
 const userRouter = require('./routers/user')
 const taskRouter = require('./routers/task')
+const User = require('./module/user')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -37,8 +38,14 @@ app.use(express.urlencoded({
 app.use(userRouter)
 
 app.get('', (req,res) => {
-    res.render('home.hbs', {
-        title: 'Přihlášení'
+    User.find({}, (err, users)=>{
+        if(err){
+            console.log("Error pyčo")
+        }
+        res.render('home.hbs', {
+            title: 'Přihlášení',
+            users:users
+        })
     })
 })
 

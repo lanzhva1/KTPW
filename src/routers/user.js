@@ -1,16 +1,15 @@
 const express = require('express')
 const User = require('../module/user')
 const auth = require('../middleware/auth')
+const jwt = require('jsonwebtoken')
 
 const router = new express.Router()
 
 // operace Create
 // požadavek POST
 // app.post('/users', async (req, res) => {
-router.post('/users', async (req, res) => {
-    console.log(req.body)
+router.post('/users/register', async (req, res) => {
     const user = new User(req.body)
-
     // user.save().then(() => {
     //     res.status(201).send(user)
     // }).catch((e) => {
@@ -33,8 +32,10 @@ router.post('/users/login', async (req, res) => {
         const user = await User.findByCredentials(req.body.email, req.body.password)
         
         const token = await user.generateAuthToken()
-        
-        res.send({ user, token })
+        jwt.sign({ username: user.username,  role: user.role }, token);
+        res.locals.user = user
+        res.redirect("/")
+        //res.send({ user, token })
     } catch (e) {
         res.status(400).send(e)
     }

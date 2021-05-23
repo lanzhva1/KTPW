@@ -11,11 +11,17 @@
     {{>header}}
      
     <p>{{message}}</p>
+      
 
     <a href="/login">Login</a>
     <a href="/register">Registrace</a>
-
-
+    
+    <h4>Existing users:</h4>
+    <ul>
+        {{#each users}}
+            <li> {{this.email}} - {{this.name}}, {{this.age}} let</li>
+        {{/each}}
+    </ul>
     {{>footer}}
     
 </body>
