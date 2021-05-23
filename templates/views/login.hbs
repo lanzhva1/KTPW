@@ -11,11 +11,12 @@
     {{>header}}
 
     {{!-- tu část s action jsem našel na netu --}}
-    <form action="/users/login" method="POST">
-        <input type="email" placeholder="email" name="email">  
-        <input type="password" placeholder="heslo" name="password">
-
-        <input type="submit" value="Odeslat">       
+    <form action="/users/login" method="POST"  >
+        <div class="container">
+            <input type="email" placeholder="email" name="email">  
+            <input type="password" placeholder="heslo" name="password">
+            <input type="submit" value="Odeslat">           
+        </div>
     </form>   
    
     <p>{{message}}</p>

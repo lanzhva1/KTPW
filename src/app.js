@@ -30,7 +30,10 @@ app.use(express.json())
 //     next()
 // })
 
-app.use(taskRouter)
+app.use(express.urlencoded({
+    extended: true
+  }))
+  app.use(taskRouter)
 app.use(userRouter)
 
 app.get('', (req,res) => {
@@ -64,7 +67,7 @@ app.get('/tasks', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Server poslouchá na portu ' + port)
+    console.log('Open local server on http://127.0.0.1:' + port < "/")
 })
 
 const bcrypt = require('bcryptjs')

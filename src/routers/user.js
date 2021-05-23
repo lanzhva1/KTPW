@@ -8,6 +8,7 @@ const router = new express.Router()
 // požadavek POST
 // app.post('/users', async (req, res) => {
 router.post('/users', async (req, res) => {
+    console.log(req.body)
     const user = new User(req.body)
 
     // user.save().then(() => {
